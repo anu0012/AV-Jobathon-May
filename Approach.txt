@@ -1,0 +1,11 @@
+Approach - 
+
+1. Imputed the null values - For Credit_Product, I put dummy values 'Unknown'.
+
+2. Performed label encoding for categorical variables.
+
+3. Ran two CatBoost Classifier Model, with following hyper-parameters: scale_pos_weight = 3.215, iterations=500, learning_rate=0.1 and depth = 4/6
+In these models, I passed the indices of Categorical columns so that the model can internally handle it.
+Third model is a XGBoost Classfier with following hyper-parameters: n_estimators=500,n_jobs = -1,max_depth=6,learning_rate=0.1
+
+4. Final results were calculated as an ensemble(simple averaging) of these three models. 
